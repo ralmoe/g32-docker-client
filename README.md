@@ -1,4 +1,4 @@
-# G32 Temperature Client
+# G32 dockerized client
 
 The [OttoWilde G32 Connected](https://www.ottowildegrillers.com/products/g32-connected-gasgrill?variant=39705156092066) 
 has 4 internal temperature-sensors and 4 plug-in thermometers that send their data to the Otto Wilde Cloud. The
