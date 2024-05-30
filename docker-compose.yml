@@ -1,0 +1,11 @@
+version: '2'
+services:
+  owg:
+    container_name: owg
+    build:
+      context: .
+    tty: true
+    volumes:
+      - ./src:/src:delegated
+    env_file:
+      - .env
