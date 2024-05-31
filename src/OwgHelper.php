@@ -62,7 +62,7 @@ class OwgHelper{
      */
     public function saveData($data){
         $now = new DateTime('now', $this->timezone);
-        $dataRow = sprintf("%s;%s\n",$now->format("Y-m-d H:i:s"),implode(";",$data));
+        $dataRow = sprintf("%s;%s\n",$now->getTimestamp(),implode(";",$data));
 
         if($wh = fopen($this->outputFile, "a+")){
             fwrite($wh, $dataRow);
