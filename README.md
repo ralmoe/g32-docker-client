@@ -41,11 +41,11 @@ from the mobile-app to Otto Wilde unveils this hash. Currently there is no other
 By default the file is stored in `/data/temperatures.csv` and looks like this:
 
 ```
-2024-05-30 18:37:33;22;22;22;22;;;;
-2024-05-30 18:37:37;22;22;22;22;;;;
-2024-05-30 18:37:41;22;22;22;22;;;;
-2024-05-30 18:37:45;22;22;22;22;;;;
-2024-05-30 18:37:49;22;22;22;22;;;;
+1717409973;22;22;22;22;;;;
+1717409975;22;22;22;22;;;;
+1717409977;22;22;22;22;;;;
+1717409979;22;22;22;22;;;;
+1717409981;22;22;22;22;;;;
 ```
 
 The grill is off, so the 4 grill zone sensors just show current the outside temperature. The thermometers are not plugged in, so the 
