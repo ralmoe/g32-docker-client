@@ -45,6 +45,34 @@ By default the file is stored in `/data/temperatures.csv` and looks like this:
 The grill is off, so the 4 grill zone sensors just show current the outside temperature. The thermometers are not plugged in, so the 
 last four columns are empty
 
+## Description
+
+### Endpoints
+* login: `https://mobile-api.ottowildeapp.com/login`
+* grilldata: `https://mobile-api.ottowildeapp.com/v2/grills`
+* socket: `socket.ottowildeapp.com` port: `4502`
+
+## Basic workflow
+
+* `POST`-request to login-endpoint
+  * post-data: `email` and `password`  
+  * response: 
+    * `accessToken` (needed for following request and socket-connection)
+    * general information about the user (name, birthdate, socialmedia-account if given)
+* `GET`-request to grilldata-endpoint
+  * httpheader: `authorization: <accessToken>` (from above request)
+  * response
+    * `popKey` (needed for socket-connection)
+    * gasbuddy-data
+    * grill-settings
+    * timers
+    * for an example see [docs/vs_grills.md]()
+  * Socket connection 
+    * start connection by sending: `{"channel":"LISTEN_TO_GRILL","data":{"grillSerialNumber":"[SERIAL-NUMBER]","pop":"[POP-KEY]"}}`
+    * result: binary data, that can be decoded to temperatures
+* storing the docoded information into the output file
+
+
 ## Unhandled issues
 * If the grill is turned off, no data is received. The same happens, if the serial-number is wrong. 
 This can be misleading.
