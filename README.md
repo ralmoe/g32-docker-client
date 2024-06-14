@@ -8,7 +8,7 @@ This docker-compose-application pulls the data from the Otto Wilde Cloud and sav
 
 ## Thanks to
 
-* [fschwarz86](https://github.com/fschwarz86) reverse engineered the Otto Wilde api and how to setup the 
+* [fschwarz86](https://github.com/fschwarz86/g32) reverse engineered the Otto Wilde api and how to setup the 
 socket-connection
 * [Sanderson](https://www.grillsportverein.de/forum/members/sandorson.162581/) discovered how to interpret the the 
 data received from the socket-connection
