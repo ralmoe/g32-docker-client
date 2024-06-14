@@ -9,7 +9,6 @@ require_once('OwgHelper.php');
 $username   = getenv('OWG_APP_USERNAME');
 $password   = getenv('OWG_APP_PASSWORD');
 $serial     = getenv('OWG_G32_SERIAL');
-$pop        = getenv('OWG_G32_POP');
 $dataDir    = getenv('OWG_DATA_DIR');
 
 $helper    = new OwgHelper($dataDir);
@@ -18,7 +17,9 @@ $owgSocket = new OwgSocket();
 
 $accessToken = $owgApi->getAccessToken();
 $helper->dLog('SUCCESS: authentication-token received','SUCCESS');
-$socket = $owgSocket->initSocket($serial,$pop,$accessToken);
+$popId = $owgApi->getPopId($accessToken);
+$helper->dLog('SUCCESS: pop-id received','SUCCESS');
+$socket = $owgSocket->initSocket($serial,$popId,$accessToken);
 $helper->dLog('SUCCESS: socket was initialized, listening for data...', 'SUCCESS');
 while(1) {
     while ($data = socket_read($socket, 240)) {

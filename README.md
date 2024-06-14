@@ -21,19 +21,13 @@ data received from the socket-connection
   * [Android](https://play.google.com/store/apps/details?id=com.otto.application&hl=de&gl=US&pli=1)
 * serial-number of the G32
   * find the number printed on a plate on the back of your G32 (not the sticker in your grease-drawer!)
-* your pop (See next chapter)
-
-## The `pop`-Problem
-The socket connection needs a hash called `pop` to succesfully authorize the connection. Tracing traffic
-from the mobile-app to Otto Wilde unveils this hash. Currently there is no other known way to get it.
 
 ## Usage
 * rename `.env.dist` to `.env` and add 
   * app-credentials
     * username
     * password
-  * G32 serial-number 
-  * G32 pop
+  * G32 serial-number
   * path to output-directory
 * start `docker compose up -d`
 
@@ -52,8 +46,9 @@ The grill is off, so the 4 grill zone sensors just show current the outside temp
 last four columns are empty
 
 ## Unhandled issues
-If the grill is turned off, no data is received. The same happens, if the serial-number is wrong. 
+* If the grill is turned off, no data is received. The same happens, if the serial-number is wrong. 
 This can be misleading.
+* if the grill is turned off the socket uses more and more cpu and needs to be restarted
 
 ## Possible usages
 * make the output-file available outside of the container and use it e.g. in [Home Assistant](https://www.home-assistant.io/)
