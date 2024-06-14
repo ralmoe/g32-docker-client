@@ -15,7 +15,7 @@ data received from the socket-connection
 
 ## Preconditions
 
-* The G32 needs an active internet-connection wlan
+* The G32 needs an active internet-connection via wlan
 * existing account for the otto-wilde-app
   * [Apple](https://apps.apple.com/de/app/otto-wilde-app/id1515540095)
   * [Android](https://play.google.com/store/apps/details?id=com.otto.application&hl=de&gl=US&pli=1)
