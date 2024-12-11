@@ -81,6 +81,9 @@ This can be misleading.
 ## Possible usages
 * make the output-file available outside of the container and use it e.g. in [Home Assistant](https://www.home-assistant.io/)
 
+## How-To
+* [Home-Assistant integration](docs/hassio.md)
+
 ## Roadmap
 * get the filling level of the gas bottle
 * get the opening state of the hood (not sure if this data is send)
